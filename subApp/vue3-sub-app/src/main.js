@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import './style.css';
+// import './style.css';
 import './public-path.js';
 import App from './App.vue';
 import { renderWithQiankun, qiankunWindow } from 'vite-plugin-qiankun/dist/helper';

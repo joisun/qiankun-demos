@@ -13,7 +13,7 @@ function render(props = {}) {
   //   routes,
   // });
 
-  console.log('container----', container);
+  // console.log('container----', container);
 
   instance = new Vue({
     // router,
@@ -28,13 +28,14 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap() {
-  console.log('[vue] vue app bootstraped');
+  console.log('Vue2 子应用 bootstraped');
 }
 export async function mount(props) {
-  console.log('[vue] props from main framework', props);
+  console.log('Vue2 子应用 mount', props);
   render(props);
 }
 export async function unmount() {
+  console.log('Vue2 子应用 unmount');
   instance.$destroy();
   instance.$el.innerHTML = '';
   instance = null;

@@ -1,0 +1,24 @@
+{
+  "name": "qiankundemo",
+  "version": "1.0.0",
+  "description": "主应用：vue3 项目",
+  "main": "index.js",
+  "scripts": {
+    "preinstall:all":"chmod +x ./scripts/*",
+    "install:all": "./scripts/install.sh",
+    "start:main": "cd master; pnpm run dev; cd -",
+    "start:vue2": "cd subApp/vue2-sub-app; pnpm run serve;cd -",
+    "start:vue3": "cd subApp/vue3-sub-app; pnpm run dev;cd -"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuNiling/qiankunDemo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YuNiling/qiankunDemo/issues"
+  },
+  "homepage": "https://github.com/YuNiling/qiankunDemo#readme"
+}

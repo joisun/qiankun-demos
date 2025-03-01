@@ -30,7 +30,6 @@
 import { ref, onMounted, markRaw, defineAsyncComponent, nextTick } from 'vue';
 import { loadMicroApp, prefetchApps } from 'qiankun';
 import themeList from '@/utils/theme.js';
-
 const keepAliveArr = ref([]);
 
 const activeMenu = ref('vue2-sub-app');

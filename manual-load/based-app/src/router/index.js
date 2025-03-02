@@ -8,7 +8,7 @@ const routes = [
   },
   {
     path: '/',
-    component: () => import('@/modules/panel/panel.vue'),
+    component: () => import('@/Layout.vue'),
   },
 ];
 

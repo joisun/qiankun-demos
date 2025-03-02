@@ -6,9 +6,9 @@
   "scripts": {
     "preinstall:all":"chmod +x ./scripts/*",
     "install:all": "./scripts/install.sh",
-    "start:main": "cd master; pnpm run dev; cd -",
-    "start:vue2": "cd subApp/vue2-sub-app; pnpm run serve;cd -",
-    "start:vue3": "cd subApp/vue3-sub-app; pnpm run dev;cd -"
+    "start:main": "cd based-app;pnpm run dev;",
+    "start:vue2": "cd sub-apps/vue2-sub-app; pnpm run serve;",
+    "start:vue3": "cd sub-apps/vue3-sub-app; pnpm run dev;"
   },
   "repository": {
     "type": "git",

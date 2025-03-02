@@ -1,20 +1,18 @@
-import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
-import path from 'path';
+import path from 'path'
+import { defineConfig } from 'vite'
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
-  css: {
-    preprocessorOptions: {
-      less: {
-        additionalData: `@import "${path.resolve(__dirname, 'src/styles/variables.less')}";`
-      }
-    }
-  },
+  plugins: [vue(), tailwindcss(),],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src')
-    }
-  }
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+  server: {
+    port: 8000,
+    cors: true,
+  },
 })

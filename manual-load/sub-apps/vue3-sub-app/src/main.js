@@ -1,31 +1,33 @@
 import { createApp } from 'vue';
-// import './style.css';
-import './public-path.js';
-import App from './App.vue';
 import { renderWithQiankun, qiankunWindow } from 'vite-plugin-qiankun/dist/helper';
+import App from './App.vue';
+import './public-path.js';
+import './assets/tailwind.css';
 
-let instance = null;
+let app;
 
 function render(props = {}) {
   const { container } = props;
-  instance = createApp(App);
-  instance.mount(container ? container.querySelector('#app') : '#app');
+  app = createApp(App);
+  
+  app.mount(container ? container.querySelector('#app') : '#app');
 }
 
 renderWithQiankun({
-  bootstrap() {
-    console.log('Vue3 子应用 bootstraped');
-  },
   mount(props) {
-    console.log('Vue3 子应用 mounted', props);
+    console.log('vue3sub mount');
     render(props);
   },
-  unmount() {
-    console.log('Vue3 子应用 unmounted');
-    if (instance) {
-      instance.unmount();
-      instance = null;
-    }
+  bootstrap() {
+    console.log('vue3sub bootstrap');
+  },
+  unmount(props) {
+    console.log('vue3sub unmount');
+    app.unmount();
+  },
+  update(props) {
+    console.log('vue3sub update');
+    console.log(props);
   }
 });
 
